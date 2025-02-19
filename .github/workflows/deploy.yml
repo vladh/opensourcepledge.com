@@ -27,6 +27,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build website files
         uses: withastro/action@v2
+      - name: Build generated resources
+        run: ./bin/make-generated-resources
   deploy:
     needs: build
     runs-on: ubuntu-latest
